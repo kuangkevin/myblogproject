@@ -1,0 +1,21 @@
+{
+  "name": "zkingblog",
+  "description": "",
+  "main": "",
+  "authors": [
+    "kuangkevin <303207135@qq.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/kuangkevin/myblogproject",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "./public/libs",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}
