@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>注册</title>
+    <link href="/libs/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="/formValidator4.0.1/style/validator.css">
+</head>
+<body>
+<nav class="navbar navbar-default" role="navigation">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#menus">
+            <span class="sr-only">匡凯文的博客</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a href="/" class="navbar-brand">匡凯文的博客</a>
+    </div>
+    <div class="collapse navbar-collapse" id="menus">
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="/users/reg">注册</a></li>
+            <li><a href="/users/login">登录</a></li>
+            <li><a href="/article/add">发表文章</a></li>
+            <li><a href="/users/logout">退出</a></li>
+        </ul>
+    </div>
+</nav>
+<div class="container">
+    <form action="/users/reg" method="post"  role="form" class="form-horizontal">
+        <div class="form-group">
+            <label for="username" class="col-sm-2 control-label">用户名</label>
+            <div class="input-group col-sm-4">
+                <div class="input-group-addon"> <span class="glyphicon glyphicon-user"></span> </div>
+                <input type="text" class="form-control" id="username" name="username" placeholder="用户名"/>
+                <span id="usernameTip"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="email" class="col-sm-2 control-label">邮箱</label>
+            <div class="input-group col-sm-4">
+                <div class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></div>
+                <input type="email" class="form-control" name="email" id="email" placeholder="邮箱"/>
+                <span id="emailTip"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="password" class="col-sm-2 control-label">密码</label>
+            <div class="input-group col-sm-4">
+                <div class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></div>
+                <input type="password" class="form-control" name="password" id="password" placeholder="密码"/>
+                <span id="passwordTip"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="repassword" class="col-sm-2 control-label">确认密码</label>
+            <div class="input-group col-sm-4">
+                <div class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></div>
+                <input type="password" class="form-control" name="repassword" id="repassword" placeholder="确认密码"/>
+                <span id="repasswordTip"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-default">提交</button>
+                <button type="reset" class="btn btn-default">重置</button>
+            </div>
+        </div>
+
+    </form>
+</div>
+<!--<script src="/formValidator4.0.1/jquery-1.11.3.js"></script>-->
+<!--<script src="/formValidator4.0.1/formValidator-4.0.1.js"></script>-->
+<!--<script src="/formValidator4.0.1/formValidatorRegex.js"></script>-->
+<!--<script>-->
+    <!--$(document).ready(function(){-->
+        <!--$.formValidator.initConfig({-->
+            <!--validatorGroup:"1",-->
+            <!--onSuccess:function(){},-->
+            <!--onError:function(){}-->
+        <!--});-->
+        <!--$('#username').formValidator({-->
+            <!--validatorGroup:"1",-->
+            <!--onEmpty:"用户名不允许为空",-->
+            <!--onShow:"请输入用户名",-->
+            <!--onFocus:"用户名只能输入英文字母或者数字,长度6-20之间",-->
+            <!--onCorrect:"用户名输入正确"-->
+        <!--}).inputValidator({-->
+            <!--min:6,-->
+            <!--max:20,-->
+            <!--onError:"用户名长度错误"-->
+        <!--}).regexValidator({-->
+            <!--regExp:"^[a-zA-Z0-9]{6,20}$",-->
+            <!--param:"i",-->
+            <!--onError:"用户名格式错误"-->
+        <!--});-->
+        <!--$('#password').formValidator({-->
+            <!--validatorGroup:"1",-->
+            <!--onEmpty:"密码不允许为空",-->
+            <!--onShow:"请输入密码",-->
+            <!--onFocus:"密码只能输入英文字母,长度8-12之间",-->
+            <!--onCorrect:"密码输入正确"-->
+        <!--}).inputValidator({-->
+            <!--min:8,-->
+            <!--max:12,-->
+            <!--onError:"密码长度错误"-->
+        <!--}).regexValidator({-->
+            <!--regExp:"^[a-zA-Z]{8,12}$",-->
+            <!--param:"i",-->
+            <!--onError:"密码格式错误"-->
+        <!--});-->
+        <!--$('#repassword').formValidator({-->
+            <!--validatorGroup:"1",-->
+            <!--onEmpty:"密码不允许为空",-->
+            <!--onShow:"请输入密码",-->
+            <!--onFocus:"密码只能输入英文字母,长度8-12之间",-->
+            <!--onCorrect:"密码输入正确"-->
+        <!--}).inputValidator({-->
+            <!--min:8,-->
+            <!--max:12,-->
+            <!--onError:"密码长度错误"-->
+        <!--}).regexValidator({-->
+            <!--regExp:"^[a-zA-Z]{8,12}$",-->
+            <!--param:"i",-->
+            <!--onError:"密码格式错误"-->
+        <!--}).compareValidator({-->
+            <!--desID:"pwd",-->
+            <!--operateor:"=",-->
+            <!--onError:"两次密码不一致"-->
+        <!--});-->
+        <!--$('#email').formValidator({-->
+            <!--validatorGroup:"1",-->
+            <!--onEmpty:"email不允许为空",-->
+            <!--onShow:"请输入email",-->
+            <!--onFocus:"密码只能输入英文字母,长度8-12之间",-->
+            <!--onCorrect:"email输入正确"-->
+        <!--}).inputValidator({-->
+            <!--min:8,-->
+            <!--max:12,-->
+            <!--onError:"密码长度错误"-->
+        <!--}).regexValidator({-->
+            <!--regExp:"^[a-zA-Z]{8,12}$",-->
+            <!--param:"i",-->
+            <!--onError:"email格式错误"-->
+        <!--});-->
+    <!--})-->
+<!--</script>-->
+<% include ../include/footer.ejs%>
